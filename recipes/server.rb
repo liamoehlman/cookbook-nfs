@@ -16,8 +16,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 include_recipe "nfs"
+
+rightscale_marker :begin
 
 # Install server components for Debian
 case node['platform']
@@ -37,3 +38,4 @@ template node['nfs']['config']['server_template'] do
   notifies :restart, "service[#{node['nfs']['service']['server']}]"
 end
 
+rightscale_marker :end

@@ -16,6 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+rightscale_marker :begin
 
 # Install package, dependent on platform
 node['nfs']['packages'].each do |nfspkg|
@@ -43,3 +44,5 @@ node['nfs']['config']['client_templates'].each do |client_template|
     notifies :restart, "service[nfslock]"
   end
 end
+
+rightscale_marker :end

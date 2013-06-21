@@ -15,4 +15,5 @@ recipe "nfs::undo", "Undo both default and server recipes"
 end
 
 depends "line"
+depends "rightscale"
 
